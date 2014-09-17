@@ -12,6 +12,15 @@ describe "Authentication" do
 	it { should have_title('Sign in') }
   end
 
+  describe "not signed in" do
+  	before { visit root_url }
+  	it { should_not have_link('Profile') }
+  	it { should_not have_link('Settings') }
+  	
+  end
+
+
+
   describe "signin" do
 	before { visit signin_path }
 
